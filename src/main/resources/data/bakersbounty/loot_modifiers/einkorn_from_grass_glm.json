@@ -1,0 +1,11 @@
+{
+  "type": "bakersbounty:swap",
+  "conditions": [
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:short_grass"
+    }
+  ],
+  "replaced_item": "minecraft:wheat_seeds",
+  "replacing_item": "bakersbounty:einkorn_seeds"
+}

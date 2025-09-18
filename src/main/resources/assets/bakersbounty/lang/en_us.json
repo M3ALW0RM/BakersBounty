@@ -1,0 +1,11 @@
+{
+  "bakersbounty.configuration.title": "Baker's Bounty Configs",
+  "bakersbounty.configuration.section.bakersbounty.common.toml": "Baker's Bounty Configs",
+  "bakersbounty.configuration.section.bakersbounty.common.toml.title": "Baker's Bounty Configs",
+  "bakersbounty.configuration.items": "Item List",
+  "bakersbounty.configuration.logDirtBlock": "Log Dirt Block",
+  "bakersbounty.configuration.magicNumberIntroduction": "Magic Number Text",
+  "bakersbounty.configuration.magicNumber": "Magic Number",
+
+  "item.bakersbounty.einkorn_seeds": "Einkorn Seeds"
+}
