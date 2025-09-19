@@ -33,5 +33,8 @@ public class DataGenerators {
                 )),
                 lookupProvider
         ));
+
+        // Add recipe provider
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
     }
 }

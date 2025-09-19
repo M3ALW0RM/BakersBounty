@@ -19,16 +19,20 @@ public class ModItems {
     public static final DeferredItem<Item> EINKORN_SEEDS = ITEMS.register("einkorn_seeds",
             () -> new ItemNameBlockItem(ModBlocks.EINKORN_CROP.get(), new Item.Properties()));
 
-    // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "bakersbounty" namespace
+    // Add wheat flour item
+    public static final DeferredItem<Item> WHEAT_FLOUR = ITEMS.registerSimpleItem(
+            "wheat_flour",
+            new Item.Properties());
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BakersBounty.MODID);
 
-    // Creates a creative tab with the id "bakersbounty:example_tab" for the example item, that is placed after the combat tab
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BAKERS_BOUNTY_TAB = CREATIVE_MODE_TABS.register("bakersbounty_tab", () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.bakersbounty")) //The language key for the title of your CreativeModeTab
+            .title(Component.translatable("itemGroup.bakersbounty"))
             .withTabsBefore(CreativeModeTabs.COMBAT)
             .icon(() -> ModItems.EINKORN_SEEDS.get().getDefaultInstance())
             .displayItems((parameters, output) -> {
-                output.accept(ModItems.EINKORN_SEEDS.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
+                output.accept(ModItems.EINKORN_SEEDS.get());
+                output.accept(ModItems.WHEAT_FLOUR.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

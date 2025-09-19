@@ -7,6 +7,7 @@
   "bakersbounty.configuration.magicNumberIntroduction": "Magic Number Text",
   "bakersbounty.configuration.magicNumber": "Magic Number",
 
+  "item.bakersbounty.wheat_flour": "Wheat Flour",
   "item.bakersbounty.einkorn_seeds": "Einkorn Seeds",
   "itemGroup.bakersbounty": "Baker's Bounty"
 }
