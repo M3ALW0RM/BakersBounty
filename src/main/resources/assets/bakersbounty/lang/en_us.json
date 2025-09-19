@@ -7,5 +7,6 @@
   "bakersbounty.configuration.magicNumberIntroduction": "Magic Number Text",
   "bakersbounty.configuration.magicNumber": "Magic Number",
 
-  "item.bakersbounty.einkorn_seeds": "Einkorn Seeds"
+  "item.bakersbounty.einkorn_seeds": "Einkorn Seeds",
+  "itemGroup.bakersbounty": "Baker's Bounty"
 }

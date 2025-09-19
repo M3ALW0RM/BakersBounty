@@ -27,4 +27,9 @@ public class ModBlocks {
     public static final DeferredBlock<Block> EINKORN_CROP =
             BLOCKS.register("einkorn_crop",
                     ()  -> new EinkornBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+
+    // This method must be called during mod initialization!
+    public static void register(IEventBus eventBus) {
+        BLOCKS.register(eventBus);
+    }
 }

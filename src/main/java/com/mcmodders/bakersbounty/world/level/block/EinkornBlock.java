@@ -1,6 +1,7 @@
 package com.mcmodders.bakersbounty.world.level.block;
 
 import com.mcmodders.bakersbounty.registry.ModItems;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
@@ -39,32 +40,5 @@ public class EinkornBlock extends CropBlock {
                 blockState.is(Blocks.PODZOL)        ||
                 blockState.is(Blocks.COARSE_DIRT)   ||
                 blockState.is(Blocks.ROOTED_DIRT);
-    }
-
-    @Override
-    public List<ItemStack> getDrops(BlockState state, LootParams.Builder builder) {
-        List<ItemStack> drops = new ArrayList<>();
-        int age = this.getAge(state);
-        int maxAge = this.getMaxAge();
-
-        if (age >= maxAge) {
-            drops.add(new ItemStack(Items.WHEAT_SEEDS));
-
-            // Optional: chance for extra seeds
-            if (Math.random() < 0.5) {
-                drops.add(new ItemStack(Items.WHEAT_SEEDS));
-            }
-
-            if (Math.random() < 0.5) {
-                drops.add(new ItemStack(Items.WHEAT_SEEDS));
-            }
-        }
-        else
-        {
-            //Drop back the einkorn seed if it hasnt gone to full age yet.
-            drops.add(new ItemStack(ModItems.EINKORN_SEEDS.get()));
-        }
-
-        return drops;
     }
 }

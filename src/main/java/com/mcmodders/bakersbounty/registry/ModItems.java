@@ -3,10 +3,7 @@ package com.mcmodders.bakersbounty.registry;
 import com.mcmodders.bakersbounty.BakersBounty;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -18,10 +15,9 @@ import net.neoforged.neoforge.common.NeoForge;
 public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BakersBounty.MODID);
-    public static final DeferredItem<Item> EINKORN_SEEDS =
-            ITEMS.register("einkorn_seeds",
-                    () -> new ItemNameBlockItem(ModBlocks.EINKORN_CROP.get(),
-                            new Item.Properties()));
+
+    public static final DeferredItem<Item> EINKORN_SEEDS = ITEMS.register("einkorn_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.EINKORN_CROP.get(), new Item.Properties()));
 
     // Create a Deferred Register to hold CreativeModeTabs which will all be registered under the "bakersbounty" namespace
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BakersBounty.MODID);
@@ -35,7 +31,8 @@ public class ModItems {
                 output.accept(ModItems.EINKORN_SEEDS.get()); // Add the example item to the tab. For your own tabs, this method is preferred over the event
             }).build());
 
-    public ModItems(IEventBus modEventBus, ModContainer modContainer){
-        CREATIVE_MODE_TABS.register(modEventBus);
+    public static void register(IEventBus eventBus) {
+        ITEMS.register(eventBus);
+        CREATIVE_MODE_TABS.register(eventBus);
     }
 }
