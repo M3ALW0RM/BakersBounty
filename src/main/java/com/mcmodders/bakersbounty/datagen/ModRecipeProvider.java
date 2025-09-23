@@ -1,14 +1,15 @@
 package com.mcmodders.bakersbounty.datagen;
 
 import com.mcmodders.bakersbounty.BakersBounty;
+import com.mcmodders.bakersbounty.registry.ModBlocks;
 import com.mcmodders.bakersbounty.registry.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
+import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
+import net.neoforged.neoforge.common.Tags;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -26,5 +27,22 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.QUERN.get())
+                .pattern(" S#")
+                .pattern(" S ")
+                .pattern("WWW")
+                .define('S', Items.SMOOTH_STONE_SLAB)
+                .define('W', ItemTags.WOODEN_SLABS)
+                .define('#', Items.STICK)
+                .unlockedBy("has_stone_slab", has(Items.STONE_SLAB))
+                .unlockedBy("has_stone_slab", has(ItemTags.WOODEN_SLABS))
+                .save(output);
+
+        QuernRecipeBuilder.grinding(RecipeCategory.FOOD, ModItems.WHEAT_FLOUR.get())
+                .requires(Items.WHEAT_SEEDS)
+                .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
+                .unlockedBy("has_quern", has(ModBlocks.QUERN.get()))
+                .save(output, "wheat_seeds_to_flour");
     }
 }

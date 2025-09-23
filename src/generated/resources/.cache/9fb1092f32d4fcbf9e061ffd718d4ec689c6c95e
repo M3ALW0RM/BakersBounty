@@ -1,3 +1,7 @@
-// 1.21.1	2025-09-19T01:50:12.3881548	Recipes
+// 1.21.1	2025-09-22T22:56:27.8693024	Recipes
+2267b570c468e7bd22bd80aaf8a86a80c2a98b45 data/bakersbounty/advancement/recipes/decorations/quern.json
+ed50ee43994b56705b57cfdd762c3d7cd613a964 data/bakersbounty/advancement/recipes/food/wheat_seeds_to_flour.json
 e17aee9afb6e0a66c78573b8dfeac58ffb6bb3a9 data/bakersbounty/advancement/recipes/misc/wheat_flour_grinding.json
+7621ad034fce62c42de03e7445656dd5d63ad864 data/bakersbounty/recipe/quern.json
 7634a6122672922b9b696e1ae2382b90a0f7e9a4 data/bakersbounty/recipe/wheat_flour_grinding.json
+b9866482c87fc82793d2e927cf92ec730eadb8df data/bakersbounty/recipe/wheat_seeds_to_flour.json

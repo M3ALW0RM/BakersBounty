@@ -1,0 +1,43 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_quern": {
+      "conditions": {
+        "items": [
+          {
+            "items": "bakersbounty:quern"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "bakersbounty:wheat_seeds_to_flour"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_wheat_seeds": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:wheat_seeds"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_wheat_seeds",
+      "has_quern"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "bakersbounty:wheat_seeds_to_flour"
+    ]
+  }
+}

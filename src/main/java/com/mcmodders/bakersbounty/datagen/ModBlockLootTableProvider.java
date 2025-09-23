@@ -64,6 +64,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         )) // NOT age 7 (so ages 0-6)
                         ))
         );
+
+        this.dropSelf(ModBlocks.QUERN.get());
     }
 
     @Override

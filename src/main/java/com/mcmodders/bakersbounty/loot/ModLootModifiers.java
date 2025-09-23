@@ -20,9 +20,9 @@ public class ModLootModifiers {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS  =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, BakersBounty.MODID);
 
-    // Register the Swap modifier serializer
-    //public static final Supplier<MapCodec<SwapLootModifier>> SWAP =
-   //        GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("swap", () -> SwapLootModifier.CODEC);
+    //Register the Swap modifier serializer
+    public static final Supplier<MapCodec<SwapLootModifier>> SWAP =
+           GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("swap", () -> SwapLootModifier.CODEC);
 
     // Register the SwapOrAdd modifier serializer
     //public static final Supplier<Codec<SwapOrAddLootModifier>> SWAP_OR_ADD =
