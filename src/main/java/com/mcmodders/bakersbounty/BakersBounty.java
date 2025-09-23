@@ -89,7 +89,7 @@ public class BakersBounty {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
             event.accept(ModItems.EINKORN_SEEDS);
-            event.accept(ModItems.BREAD);
+            event.accept(ModItems.COARSE_FLATBREAD);
         }
     }
 

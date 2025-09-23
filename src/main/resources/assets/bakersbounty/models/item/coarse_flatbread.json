@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bakersbounty:item/bread"
+    "layer0": "bakersbounty:item/coarse_flatbread"
   }
 }

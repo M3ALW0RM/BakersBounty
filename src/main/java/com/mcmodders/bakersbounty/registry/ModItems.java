@@ -30,9 +30,9 @@ ModItems {
 
 
     // Add wheat flour item
-    public static final DeferredItem<Item> BREAD = ITEMS.registerSimpleItem(
-            "bread",
-            new Item.Properties().food(new FoodProperties.Builder().nutrition(4).saturationModifier(3).build()));
+    public static final DeferredItem<Item> COARSE_FLATBREAD = ITEMS.registerSimpleItem(
+            "coarse_flatbread",
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(4.8F).build()));
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BakersBounty.MODID);
 
@@ -43,6 +43,7 @@ ModItems {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.EINKORN_SEEDS.get());
                 output.accept(ModItems.WHEAT_FLOUR.get());
+                output.accept(ModItems.COARSE_FLATBREAD.get());
             }).build());
 
     public static void register(IEventBus eventBus) {

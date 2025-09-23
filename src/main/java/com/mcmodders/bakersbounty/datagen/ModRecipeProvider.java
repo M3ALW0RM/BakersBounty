@@ -23,9 +23,10 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BREAD.get())
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COARSE_FLATBREAD.get(), 3)
                 .requires(Items.WATER_BUCKET)
-                .requires(ModItems.WHEAT_FLOUR)
-                .save(output, BakersBounty.MODID + ":bread");
+                .requires(ModItems.WHEAT_FLOUR, 8)
+                .unlockedBy("has_wheat_flour", has(ModItems.WHEAT_FLOUR))
+                .save(output);
     }
 }

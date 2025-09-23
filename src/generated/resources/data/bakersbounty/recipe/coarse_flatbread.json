@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    },
+    {
+      "item": "bakersbounty:wheat_flour"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "id": "bakersbounty:coarse_flatbread"
+  }
+}
