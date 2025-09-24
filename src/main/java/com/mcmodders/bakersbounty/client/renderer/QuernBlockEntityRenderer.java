@@ -30,7 +30,7 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
 
         // Render input item on top of the quern
         if (!inputItem.isEmpty()) {
-            renderInputItem(blockEntity, inputItem, poseStack, buffer, packedLight, packedOverlay, partialTick);
+            renderInputItem(blockEntity, inputItem, poseStack, buffer, packedLight, packedOverlay, partialTick, facing);
         }
 
         // Render output item at the front of the quern
@@ -40,11 +40,44 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
     }
 
     private void renderInputItem(QuernBlockEntity blockEntity, ItemStack item, PoseStack poseStack,
-                                 MultiBufferSource buffer, int packedLight, int packedOverlay, float partialTick) {
+                                 MultiBufferSource buffer, int packedLight, int packedOverlay, float partialTick, Direction facing) {
         poseStack.pushPose();
 
+        double offsetX = 0.5D;
+        double offsetZ = 0.4D;
+        float rotationOffset = 180F;
+
+        switch (facing) {
+            case NORTH:
+            {
+                offsetZ = 0.6D;
+                rotationOffset = 0F;
+                break;
+            }
+            case SOUTH:
+            {
+                offsetZ = 0.4D;
+                break;
+            }
+            case WEST:
+            {
+                offsetX = 0.6D;
+                offsetZ = 0.5D;
+                rotationOffset = 270F;
+                break;
+            }
+            case EAST:
+            {
+                offsetX = 0.4D;
+                offsetZ = 0.5D;
+                rotationOffset = 90F;
+                break;
+            }
+
+        }
+
         // Position the item on top of the quern, slightly elevated
-        poseStack.translate(0.5D, 0.5D, 0.4D);
+        poseStack.translate(offsetX, 0.5D, offsetZ);
 
         // Scale the item down a bit
         poseStack.scale(0.5F, 0.5F, 0.5F);
@@ -54,7 +87,7 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
 
         // Add a slight rotation based on grinding progress for visual feedback
         float progress = blockEntity.getGrindingProgressPercent();
-        float rotationAngle = progress * 90F + 180F;
+        float rotationAngle = progress * 90F + rotationOffset;
 
         // Add time-based animation for active grinding
         if (progress > 0 && progress < 1.0F) {
@@ -82,11 +115,30 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
         double offsetZ = -0.5D;
 
         switch (facing) {
-            case NORTH -> offsetZ = -0.5D;
-            case SOUTH -> offsetZ = 0.8D;
-            case WEST -> offsetX = 0.2D;
-            case EAST -> offsetX = 0.8D;
+            case NORTH:
+            {
+                offsetZ = -0.5D;
+                break;
+            }
+            case SOUTH:
+            {
+                offsetZ = 0.8D;
+                break;
+            }
+            case WEST:
+            {
+                offsetX = 0.2D;
+                break;
+            }
+            case EAST:
+            {
+                offsetX = 0.8D;
+                break;
+            }
+
         }
+
+
         //poseStack.translate(0.5D, 1.0D, 0.5D);
         poseStack.translate(offsetX, 0.1D, offsetZ);
 

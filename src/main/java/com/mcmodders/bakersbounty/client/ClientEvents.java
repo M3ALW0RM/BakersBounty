@@ -18,14 +18,6 @@ public class ClientEvents {
     @SubscribeEvent
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(ModBlockEntities.QUERN.get(), QuernBlockEntityRenderer::new);
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.QUERN.get(), RenderType.cutout());
     }
-
-    //// Add this new method
-    //@SubscribeEvent
-    //public static void registerBlockRenderTypes(FMLClientSetupEvent event) {
-    //    event.enqueueWork(() -> {
-    //        RenderType cutout = RenderType.cutout();
-    //        ItemBlockRenderTypes.setRenderLayer(ModBlocks.QUERN.get(), cutout);
-    //    });
-    //}
 }

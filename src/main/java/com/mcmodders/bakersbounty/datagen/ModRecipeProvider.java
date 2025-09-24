@@ -23,11 +23,16 @@ public class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput output) {
         // Simple wheat flour recipe: 1 cobblestone + 1 wheat seed = 1 wheat flour
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WHEAT_FLOUR.get())
-                .requires(Items.COBBLESTONE)
+                .requires(Tags.Items.STONES)
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
-				
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.WHEAT_SEEDS, 3)
+                .requires(Tags.Items.CROPS_WHEAT)
+                .unlockedBy("has_wheat", has(Tags.Items.CROPS_WHEAT))
+                .save(output, BakersBounty.MODID + ":wheat_threshing");
+
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.QUERN.get())
                 .pattern(" S#")
                 .pattern(" S ")
@@ -49,6 +54,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(ModItems.WHEAT_FLOUR, 9)
                 .unlockedBy("has_wheat_flour", has(ModItems.WHEAT_FLOUR))
                 .save(output);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COARSE_FLATBREAD.get(), 3)
                 .requires(ModItems.FLOUR_SAC)
                 .requires(Items.WATER_BUCKET)
