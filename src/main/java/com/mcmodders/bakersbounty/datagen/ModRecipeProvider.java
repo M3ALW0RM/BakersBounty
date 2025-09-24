@@ -4,10 +4,7 @@ import com.mcmodders.bakersbounty.BakersBounty;
 import com.mcmodders.bakersbounty.registry.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.recipes.RecipeCategory;
-import net.minecraft.data.recipes.RecipeOutput;
-import net.minecraft.data.recipes.RecipeProvider;
-import net.minecraft.data.recipes.ShapelessRecipeBuilder;
+import net.minecraft.data.recipes.*;
 import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
@@ -26,5 +23,14 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FLOUR_SAC.get(), 1)
+                .requires(ModItems.WHEAT_FLOUR, 9)
+                .unlockedBy("has_wheat_flour", has(ModItems.WHEAT_FLOUR))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COARSE_FLATBREAD.get(), 3)
+                .requires(ModItems.FLOUR_SAC)
+                .requires(Items.WATER_BUCKET)
+                .unlockedBy("has_flour_sac", has(ModItems.FLOUR_SAC))
+                .save(output);
     }
 }

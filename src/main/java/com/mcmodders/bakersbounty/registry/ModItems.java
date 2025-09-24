@@ -3,16 +3,15 @@ package com.mcmodders.bakersbounty.registry;
 import com.mcmodders.bakersbounty.BakersBounty;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.common.NeoForge;
 
-public class ModItems {
+public class
+ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BakersBounty.MODID);
 
@@ -24,6 +23,17 @@ public class ModItems {
             "wheat_flour",
             new Item.Properties());
 
+
+    // Add wheat flour item
+    public static final DeferredItem<Item> COARSE_FLATBREAD = ITEMS.registerSimpleItem(
+            "coarse_flatbread",
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(6).saturationModifier(4.8F).build()));
+
+    public static final DeferredItem<Item> FLOUR_SAC = ITEMS.registerSimpleItem(
+            "flour_sac",
+            new Item.Properties());
+
+
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BakersBounty.MODID);
 
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BAKERS_BOUNTY_TAB = CREATIVE_MODE_TABS.register("bakersbounty_tab", () -> CreativeModeTab.builder()
@@ -33,6 +43,8 @@ public class ModItems {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.EINKORN_SEEDS.get());
                 output.accept(ModItems.WHEAT_FLOUR.get());
+                output.accept(ModItems.COARSE_FLATBREAD.get());
+                output.accept(ModItems.FLOUR_SAC.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
