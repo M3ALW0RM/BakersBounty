@@ -27,7 +27,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
-
+				
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ModBlocks.QUERN.get())
                 .pattern(" S#")
                 .pattern(" S ")
@@ -44,5 +44,15 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .unlockedBy("has_quern", has(ModBlocks.QUERN.get()))
                 .save(output, "wheat_seeds_to_flour");
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FLOUR_SAC.get(), 1)
+                .requires(ModItems.WHEAT_FLOUR, 9)
+                .unlockedBy("has_wheat_flour", has(ModItems.WHEAT_FLOUR))
+                .save(output);
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COARSE_FLATBREAD.get(), 3)
+                .requires(ModItems.FLOUR_SAC)
+                .requires(Items.WATER_BUCKET)
+                .unlockedBy("has_flour_sac", has(ModItems.FLOUR_SAC))
+                .save(output);
     }
 }
