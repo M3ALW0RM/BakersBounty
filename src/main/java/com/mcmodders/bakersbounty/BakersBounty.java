@@ -87,10 +87,6 @@ public class BakersBounty {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
-            event.accept(ModItems.EINKORN_SEEDS);
-            event.accept(ModItems.COARSE_FLATBREAD);
-        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

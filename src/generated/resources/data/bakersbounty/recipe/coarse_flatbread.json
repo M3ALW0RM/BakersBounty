@@ -3,31 +3,10 @@
   "category": "misc",
   "ingredients": [
     {
+      "item": "bakersbounty:flour_sac"
+    },
+    {
       "item": "minecraft:water_bucket"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
-    },
-    {
-      "item": "bakersbounty:wheat_flour"
     }
   ],
   "result": {
