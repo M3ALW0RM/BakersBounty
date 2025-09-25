@@ -9,6 +9,8 @@
 
   "item.bakersbounty.wheat_flour": "Wheat Flour",
   "item.bakersbounty.einkorn_seeds": "Einkorn Seeds",
+  "block.bakersbounty.quern": "Quern",
+  "item.bakersbounty.quern": "Quern",
   "item.bakersbounty.coarse_flatbread": "Coarse Flatbread",
   "item.bakersbounty.flour_sac": "Sac of Flour",
   "itemGroup.bakersbounty": "Baker's Bounty"

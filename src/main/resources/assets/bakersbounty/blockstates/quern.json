@@ -1,0 +1,23 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "bakersbounty:block/quern",
+      "render_type": "cutout"
+    },
+    "facing=south": {
+      "model": "bakersbounty:block/quern",
+      "y": 180,
+      "render_type": "cutout"
+    },
+    "facing=west": {
+      "model": "bakersbounty:block/quern",
+      "y": 270,
+      "render_type": "cutout"
+    },
+    "facing=east": {
+      "model": "bakersbounty:block/quern",
+      "y": 90,
+      "render_type": "cutout"
+    }
+  }
+}

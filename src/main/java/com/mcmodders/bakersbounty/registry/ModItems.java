@@ -19,9 +19,10 @@ ModItems {
             () -> new ItemNameBlockItem(ModBlocks.EINKORN_CROP.get(), new Item.Properties()));
 
     // Add wheat flour item
-    public static final DeferredItem<Item> WHEAT_FLOUR = ITEMS.registerSimpleItem(
-            "wheat_flour",
-            new Item.Properties());
+    public static final DeferredItem<Item> WHEAT_FLOUR = ITEMS.registerSimpleItem("wheat_flour");
+
+    public static final DeferredItem<Item> QUERN = ITEMS.register("quern",
+            () -> new BlockItem(ModBlocks.QUERN.get(), new Item.Properties()));
 
 
     // Add wheat flour item
@@ -43,12 +44,16 @@ ModItems {
             .displayItems((parameters, output) -> {
                 output.accept(ModItems.EINKORN_SEEDS.get());
                 output.accept(ModItems.WHEAT_FLOUR.get());
+                output.accept(ModItems.QUERN.get());
                 output.accept(ModItems.COARSE_FLATBREAD.get());
                 output.accept(ModItems.FLOUR_SAC.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
+        System.out.println("Registering Baker's Bounty items...");
         ITEMS.register(eventBus);
+        System.out.println("Registering Baker's Bounty creative tab...");
         CREATIVE_MODE_TABS.register(eventBus);
+        System.out.println("Registration complete!");
     }
 }

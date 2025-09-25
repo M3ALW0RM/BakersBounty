@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "item": "minecraft:smooth_stone_slab"
+    },
+    "W": {
+      "tag": "minecraft:wooden_slabs"
+    }
+  },
+  "pattern": [
+    " S#",
+    " S ",
+    "WWW"
+  ],
+  "result": {
+    "count": 1,
+    "id": "bakersbounty:quern"
+  }
+}

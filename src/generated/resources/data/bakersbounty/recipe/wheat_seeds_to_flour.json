@@ -1,0 +1,10 @@
+{
+  "type": "bakersbounty:quern_grinding",
+  "ingredient": {
+    "item": "minecraft:wheat_seeds"
+  },
+  "result": {
+    "count": 1,
+    "id": "bakersbounty:wheat_flour"
+  }
+}
