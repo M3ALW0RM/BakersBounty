@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "bakersbounty:item/flour_sac"
+    "layer0": "bakersbounty:item/coarse_flat_dough"
   }
 }

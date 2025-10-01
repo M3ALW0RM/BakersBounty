@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "tag": "c:stones"
+      "item": "bakersbounty:ground_stone"
     },
     {
       "item": "minecraft:wheat_seeds"
@@ -11,6 +11,6 @@
   ],
   "result": {
     "count": 1,
-    "id": "bakersbounty:wheat_flour"
+    "id": "bakersbounty:gritty_wheat_flour"
   }
 }

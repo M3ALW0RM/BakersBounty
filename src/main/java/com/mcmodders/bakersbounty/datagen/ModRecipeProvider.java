@@ -21,11 +21,20 @@ public class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput output) {
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.GROUND_STONE.get())
+                .pattern("SS")
+                .define('S', Items.STONE)
+                .unlockedBy("has_stone", has(Items.STONE))
+                .save(output);
+
+
         // Simple wheat flour recipe: 1 cobblestone + 1 wheat seed = 1 wheat flour
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.WHEAT_FLOUR.get())
-                .requires(Tags.Items.STONES)
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GRITTY_WHEAT_FLOUR.get())
+                .requires(ModItems.GROUND_STONE)
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
+                .unlockedBy("has_ground_stone", has(ModItems.GROUND_STONE))
                 .save(output, BakersBounty.MODID + ":wheat_flour_grinding");
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.WHEAT_SEEDS, 3)
@@ -44,21 +53,32 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_stone_slab", has(ItemTags.WOODEN_SLABS))
                 .save(output);
 
-        QuernRecipeBuilder.grinding(RecipeCategory.FOOD, ModItems.WHEAT_FLOUR.get())
+        QuernRecipeBuilder.grinding(RecipeCategory.FOOD, ModItems.COARSE_WHEAT_FLOUR.get())
                 .requires(Items.WHEAT_SEEDS)
                 .unlockedBy("has_wheat_seeds", has(Items.WHEAT_SEEDS))
                 .unlockedBy("has_quern", has(ModBlocks.QUERN.get()))
                 .save(output, "wheat_seeds_to_flour");
 
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.FLOUR_SAC.get(), 1)
-                .requires(ModItems.WHEAT_FLOUR, 9)
-                .unlockedBy("has_wheat_flour", has(ModItems.WHEAT_FLOUR))
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.COARSE_FLOUR_SAC.get(), 1)
+                .requires(ModItems.COARSE_WHEAT_FLOUR, 9)
+                .unlockedBy("has_wheat_flour", has(ModItems.COARSE_WHEAT_FLOUR))
                 .save(output);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.COARSE_FLATBREAD.get(), 3)
-                .requires(ModItems.FLOUR_SAC)
+                .requires(ModItems.COARSE_FLOUR_SAC)
                 .requires(Items.WATER_BUCKET)
-                .unlockedBy("has_flour_sac", has(ModItems.FLOUR_SAC))
+                .unlockedBy("has_flour_sac", has(ModItems.COARSE_FLOUR_SAC))
+                .save(output);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.GRITTY_FLOUR_SAC.get(), 1)
+                .requires(ModItems.GRITTY_WHEAT_FLOUR, 9)
+                .unlockedBy("has_wheat_flour", has(ModItems.GRITTY_WHEAT_FLOUR))
+                .save(output);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.GRITTY_FLATBREAD.get(), 3)
+                .requires(ModItems.GRITTY_FLOUR_SAC)
+                .requires(Items.WATER_BUCKET)
+                .unlockedBy("has_flour_sac", has(ModItems.GRITTY_FLOUR_SAC))
                 .save(output);
     }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "bakersbounty:item/wheat_flour"
+    "layer0": "bakersbounty:item/ground_stone"
   }
 }

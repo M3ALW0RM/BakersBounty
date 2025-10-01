@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:gritty_wheat_flour"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bakersbounty:gritty_flour_sac"
+  }
+}
