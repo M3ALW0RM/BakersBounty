@@ -17,6 +17,8 @@
   "item.bakersbounty.gritty_flat_bread": "Gritty Flatbread",
   "item.bakersbounty.coarse_flat_bread": "Coarse Flatbread",
   "item.bakersbounty.flour_sac": "Sac of Flour",
+  "item.bakersbounty.gritty_flour_sac": "Sac of Gritty Flour",
+  "item.bakersbounty.coarse_flour_sac": "Sac of Coarse Flour",
   "item.bakersbounty.ground_stone": "Ground Stone",
   "itemGroup.bakersbounty": "Baker's Bounty"
 }
