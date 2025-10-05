@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    },
+    {
+      "item": "bakersbounty:coarse_wheat_flour"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "bakersbounty:coarse_flour_sac"
+  }
+}

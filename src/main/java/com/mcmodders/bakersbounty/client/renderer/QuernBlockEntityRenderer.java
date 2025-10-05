@@ -133,6 +133,7 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
             case EAST:
             {
                 offsetX = 0.8D;
+                offsetZ = 0.5D;
                 break;
             }
 

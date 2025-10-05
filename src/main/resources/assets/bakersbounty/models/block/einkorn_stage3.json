@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "bakersbounty:block/einkorn_stage3"
+  }
+}

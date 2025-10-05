@@ -3,7 +3,7 @@
   "category": "misc",
   "ingredients": [
     {
-      "item": "bakersbounty:flour_sac"
+      "item": "bakersbounty:coarse_flour_sac"
     },
     {
       "item": "minecraft:water_bucket"
@@ -11,6 +11,6 @@
   ],
   "result": {
     "count": 3,
-    "id": "bakersbounty:coarse_flatbread"
+    "id": "bakersbounty:coarse_flat_bread"
   }
 }

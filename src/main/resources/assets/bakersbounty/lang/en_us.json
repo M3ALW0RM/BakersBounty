@@ -7,11 +7,18 @@
   "bakersbounty.configuration.magicNumberIntroduction": "Magic Number Text",
   "bakersbounty.configuration.magicNumber": "Magic Number",
 
-  "item.bakersbounty.wheat_flour": "Wheat Flour",
+  "item.bakersbounty.coarse_wheat_flour": "Coarse Wheat Flour",
+  "item.bakersbounty.gritty_wheat_flour": "Gritty Wheat Flour",
   "item.bakersbounty.einkorn_seeds": "Einkorn Seeds",
   "block.bakersbounty.quern": "Quern",
   "item.bakersbounty.quern": "Quern",
-  "item.bakersbounty.coarse_flatbread": "Coarse Flatbread",
+  "item.bakersbounty.gritty_flat_dough": "Gritty Flatbread Dough",
+  "item.bakersbounty.coarse_flat_dough": "Coarse Flatbread Dough",
+  "item.bakersbounty.gritty_flat_bread": "Gritty Flatbread",
+  "item.bakersbounty.coarse_flat_bread": "Coarse Flatbread",
   "item.bakersbounty.flour_sac": "Sac of Flour",
+  "item.bakersbounty.gritty_flour_sac": "Sac of Gritty Flour",
+  "item.bakersbounty.coarse_flour_sac": "Sac of Coarse Flour",
+  "item.bakersbounty.ground_stone": "Ground Stone",
   "itemGroup.bakersbounty": "Baker's Bounty"
 }
