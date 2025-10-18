@@ -1,9 +1,12 @@
 package com.mcmodders.bakersbounty.blockentities;
 
+import com.mcmodders.bakersbounty.blocks.QuernBlock;
 import com.mcmodders.bakersbounty.registry.ModBlockEntities;
 import com.mcmodders.bakersbounty.recipes.QuernRecipe;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Vec3i;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
@@ -16,6 +19,7 @@ import net.minecraft.world.item.crafting.SingleRecipeInput;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.Optional;
 
@@ -71,7 +75,30 @@ public class QuernBlockEntity extends BlockEntity {
 
                     if (recipeHolder.isPresent()) {
                         QuernRecipe recipe = recipeHolder.get().value();
-                        outputItem = recipe.getResultItem(level.registryAccess()).copy();
+                        ItemStack result = recipe.getResultItem(level.registryAccess()).copy();
+                        // Auto-eject the flour to the world
+                        if (!level.isClientSide) {
+                            // Calculate spawn position (slightly above the quern)
+                            Direction facing = getBlockState().getValue(QuernBlock.FACING);
+                            Vec3 vector = Vec3.atBottomCenterOf(worldPosition);;
+                            double distance = 0.5;
+                            vector = vector.add(facing.getNormal().getX()*distance, facing.getNormal().getY()*distance, facing.getNormal().getZ()*distance);
+                            double x = vector.x();
+                            double y = vector.y();
+                            double z = vector.z();
+
+                            // Create and spawn the item entity
+                            net.minecraft.world.entity.item.ItemEntity itemEntity =
+                                    new net.minecraft.world.entity.item.ItemEntity(level, x, y, z, result);
+                            itemEntity.setDeltaMovement(0, 0.1, 0); // Small upward velocity
+                            level.addFreshEntity(itemEntity);
+
+                            // Optional: Play sound effect
+                            level.playSound(null, worldPosition,
+                                    net.minecraft.sounds.SoundEvents.GRINDSTONE_USE,
+                                    net.minecraft.sounds.SoundSource.BLOCKS, 0.5f, 1.0f);
+                        }
+
                         inputItem = ItemStack.EMPTY;
                         grindingProgress = 0;
                     }

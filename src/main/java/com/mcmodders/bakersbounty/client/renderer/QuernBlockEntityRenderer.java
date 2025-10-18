@@ -32,11 +32,6 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
         if (!inputItem.isEmpty()) {
             renderInputItem(blockEntity, inputItem, poseStack, buffer, packedLight, packedOverlay, partialTick, facing);
         }
-
-        // Render output item at the front of the quern
-        if (!outputItem.isEmpty()) {
-            renderOutputItem(outputItem, poseStack, buffer, packedLight, packedOverlay, facing);
-        }
     }
 
     private void renderInputItem(QuernBlockEntity blockEntity, ItemStack item, PoseStack poseStack,
@@ -117,7 +112,7 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
         switch (facing) {
             case NORTH:
             {
-                offsetZ = -0.5D;
+                offsetZ = 0.2D;
                 break;
             }
             case SOUTH:
@@ -128,6 +123,7 @@ public class QuernBlockEntityRenderer implements BlockEntityRenderer<QuernBlockE
             case WEST:
             {
                 offsetX = 0.2D;
+                offsetZ = 0.5D;
                 break;
             }
             case EAST:
