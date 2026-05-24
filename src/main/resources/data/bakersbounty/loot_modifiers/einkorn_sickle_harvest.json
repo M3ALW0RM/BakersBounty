@@ -1,0 +1,11 @@
+{
+  "type": "bakersbounty:sickle_harvest",
+  "conditions": [
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "bakersbounty:einkorn_crop",
+      "properties": { "age": "7" }
+    }
+  ],
+  "sheaf_item": "bakersbounty:einkorn_sheaf"
+}

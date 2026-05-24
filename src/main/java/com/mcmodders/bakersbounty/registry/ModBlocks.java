@@ -2,25 +2,17 @@ package com.mcmodders.bakersbounty.registry;
 
 import com.mcmodders.bakersbounty.BakersBounty;
 import com.mcmodders.bakersbounty.blocks.QuernBlock;
+import com.mcmodders.bakersbounty.blocks.StookBlock;
 import com.mcmodders.bakersbounty.world.level.block.EinkornBlock;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.fml.ModContainer;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.common.NeoForge;
 
 public class ModBlocks {
 
@@ -36,6 +28,30 @@ public class ModBlocks {
                     .strength(3.5f)
                     .requiresCorrectToolForDrops()
                     .noOcclusion()));
+
+    public static final DeferredBlock<Block> WHEAT_STOOK = BLOCKS.register("wheat_stook",
+            () -> new StookBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .strength(0.8f)
+                    .ignitedByLava()));
+
+    public static final DeferredBlock<Block> EINKORN_STOOK = BLOCKS.register("einkorn_stook",
+            () -> new StookBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_YELLOW)
+                    .strength(0.8f)
+                    .ignitedByLava()));
+
+    public static final DeferredBlock<Block> DRIED_WHEAT_STOOK = BLOCKS.register("dried_wheat_stook",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .strength(0.8f)
+                    .ignitedByLava()));
+
+    public static final DeferredBlock<Block> DRIED_EINKORN_STOOK = BLOCKS.register("dried_einkorn_stook",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .strength(0.8f)
+                    .ignitedByLava()));
 
     // This method must be called during mod initialization!
     public static void register(IEventBus eventBus) {

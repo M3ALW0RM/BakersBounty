@@ -66,6 +66,10 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         );
 
         this.dropSelf(ModBlocks.QUERN.get());
+        this.dropSelf(ModBlocks.WHEAT_STOOK.get());
+        this.dropSelf(ModBlocks.EINKORN_STOOK.get());
+        this.dropSelf(ModBlocks.DRIED_WHEAT_STOOK.get());
+        this.dropSelf(ModBlocks.DRIED_EINKORN_STOOK.get());
     }
 
     @Override

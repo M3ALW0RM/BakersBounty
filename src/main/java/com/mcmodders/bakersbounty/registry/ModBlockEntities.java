@@ -2,6 +2,7 @@ package com.mcmodders.bakersbounty.registry;
 
 import com.mcmodders.bakersbounty.BakersBounty;
 import com.mcmodders.bakersbounty.blockentities.QuernBlockEntity;
+import com.mcmodders.bakersbounty.blockentities.StookBlockEntity;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -14,5 +15,11 @@ public class ModBlockEntities {
     public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<QuernBlockEntity>> QUERN =
             BLOCK_ENTITIES.register("quern", () ->
                     BlockEntityType.Builder.of(QuernBlockEntity::new, ModBlocks.QUERN.get())
+                            .build(null));
+
+    public static final DeferredHolder<BlockEntityType<?>, BlockEntityType<StookBlockEntity>> STOOK =
+            BLOCK_ENTITIES.register("stook", () ->
+                    BlockEntityType.Builder.of(StookBlockEntity::new,
+                                    ModBlocks.WHEAT_STOOK.get(), ModBlocks.EINKORN_STOOK.get())
                             .build(null));
 }

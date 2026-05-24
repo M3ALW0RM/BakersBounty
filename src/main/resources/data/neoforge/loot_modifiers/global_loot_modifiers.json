@@ -2,6 +2,8 @@
   "replace": false,
   "entries": [
     "bakersbounty:einkorn_from_grass_glm",
-    "bakersbounty:einkorn_from_tall_grass_glm"
+    "bakersbounty:einkorn_from_tall_grass_glm",
+    "bakersbounty:wheat_sickle_harvest",
+    "bakersbounty:einkorn_sickle_harvest"
   ]
 }

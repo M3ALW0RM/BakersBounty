@@ -1,0 +1,11 @@
+{
+  "type": "bakersbounty:sickle_harvest",
+  "conditions": [
+    {
+      "condition": "minecraft:block_state_property",
+      "block": "minecraft:wheat",
+      "properties": { "age": "7" }
+    }
+  ],
+  "sheaf_item": "bakersbounty:wheat_sheaf"
+}

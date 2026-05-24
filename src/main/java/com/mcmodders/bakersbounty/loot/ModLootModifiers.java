@@ -1,6 +1,5 @@
 package com.mcmodders.bakersbounty.loot;
 
-import com.mojang.serialization.Codec;
 import com.mcmodders.bakersbounty.BakersBounty;
 import com.mojang.serialization.MapCodec;
 import net.neoforged.bus.api.IEventBus;
@@ -20,9 +19,11 @@ public class ModLootModifiers {
     public static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> GLOBAL_LOOT_MODIFIER_SERIALIZERS  =
             DeferredRegister.create(NeoForgeRegistries.Keys.GLOBAL_LOOT_MODIFIER_SERIALIZERS, BakersBounty.MODID);
 
-    //Register the Swap modifier serializer
     public static final Supplier<MapCodec<SwapLootModifier>> SWAP =
            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("swap", () -> SwapLootModifier.CODEC);
+
+    public static final Supplier<MapCodec<SickleLootModifier>> SICKLE_HARVEST =
+            GLOBAL_LOOT_MODIFIER_SERIALIZERS.register("sickle_harvest", () -> SickleLootModifier.CODEC);
 
     // Register the SwapOrAdd modifier serializer
     //public static final Supplier<Codec<SwapOrAddLootModifier>> SWAP_OR_ADD =
