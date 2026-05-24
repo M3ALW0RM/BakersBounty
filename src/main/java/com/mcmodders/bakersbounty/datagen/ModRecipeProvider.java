@@ -80,5 +80,28 @@ public class ModRecipeProvider extends RecipeProvider {
                 .requires(Items.WATER_BUCKET)
                 .unlockedBy("has_flour_sac", has(ModItems.GRITTY_FLOUR_SAC))
                 .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.SICKLE.get())
+                .pattern(" I")
+                .pattern("I ")
+                .pattern(" S")
+                .define('I', Items.IRON_INGOT)
+                .define('S', Items.STICK)
+                .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WHEAT_STOOK.get())
+                .pattern("WW")
+                .pattern("WW")
+                .define('W', ModItems.WHEAT_SHEAF.get())
+                .unlockedBy("has_wheat_sheaf", has(ModItems.WHEAT_SHEAF.get()))
+                .save(output);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EINKORN_STOOK.get())
+                .pattern("EE")
+                .pattern("EE")
+                .define('E', ModItems.EINKORN_SHEAF.get())
+                .unlockedBy("has_einkorn_sheaf", has(ModItems.EINKORN_SHEAF.get()))
+                .save(output);
     }
 }

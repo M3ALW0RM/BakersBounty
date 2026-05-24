@@ -2,6 +2,7 @@ package com.mcmodders.bakersbounty.registry;
 
 import com.mcmodders.bakersbounty.BakersBounty;
 import com.mcmodders.bakersbounty.items.GroundStoneItem;
+import com.mcmodders.bakersbounty.items.SickleItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
@@ -55,6 +56,23 @@ ModItems {
             () -> new GroundStoneItem(new Item.Properties().stacksTo(1))
     );
 
+    public static final DeferredItem<Item> WHEAT_SHEAF = ITEMS.registerSimpleItem("wheat_sheaf");
+    public static final DeferredItem<Item> EINKORN_SHEAF = ITEMS.registerSimpleItem("einkorn_sheaf");
+
+    public static final DeferredItem<Item> SICKLE = ITEMS.register("sickle",
+            () -> new SickleItem(new Item.Properties().durability(64)));
+
+    public static final DeferredItem<Item> WHEAT_STOOK = ITEMS.register("wheat_stook",
+            () -> new BlockItem(ModBlocks.WHEAT_STOOK.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> EINKORN_STOOK = ITEMS.register("einkorn_stook",
+            () -> new BlockItem(ModBlocks.EINKORN_STOOK.get(), new Item.Properties()));
+
+    public static final DeferredItem<Item> DRIED_WHEAT_STOOK = ITEMS.register("dried_wheat_stook",
+            () -> new BlockItem(ModBlocks.DRIED_WHEAT_STOOK.get(), new Item.Properties()));
+    public static final DeferredItem<Item> DRIED_EINKORN_STOOK = ITEMS.register("dried_einkorn_stook",
+            () -> new BlockItem(ModBlocks.DRIED_EINKORN_STOOK.get(), new Item.Properties()));
+
 
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, BakersBounty.MODID);
 
@@ -74,6 +92,13 @@ ModItems {
                 output.accept(ModItems.COARSE_FLAT_DOUGH.get());
                 output.accept(ModItems.GRITTY_FLATBREAD.get());
                 output.accept(ModItems.COARSE_FLATBREAD.get());
+                output.accept(ModItems.SICKLE.get());
+                output.accept(ModItems.WHEAT_SHEAF.get());
+                output.accept(ModItems.EINKORN_SHEAF.get());
+                output.accept(ModItems.WHEAT_STOOK.get());
+                output.accept(ModItems.EINKORN_STOOK.get());
+                output.accept(ModItems.DRIED_WHEAT_STOOK.get());
+                output.accept(ModItems.DRIED_EINKORN_STOOK.get());
             }).build());
 
     public static void register(IEventBus eventBus) {
