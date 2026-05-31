@@ -90,18 +90,5 @@ public class ModRecipeProvider extends RecipeProvider {
                 .unlockedBy("has_iron_ingot", has(Items.IRON_INGOT))
                 .save(output);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.WHEAT_STOOK.get())
-                .pattern("WW")
-                .pattern("WW")
-                .define('W', ModItems.WHEAT_SHEAF.get())
-                .unlockedBy("has_wheat_sheaf", has(ModItems.WHEAT_SHEAF.get()))
-                .save(output);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.EINKORN_STOOK.get())
-                .pattern("EE")
-                .pattern("EE")
-                .define('E', ModItems.EINKORN_SHEAF.get())
-                .unlockedBy("has_einkorn_sheaf", has(ModItems.EINKORN_SHEAF.get()))
-                .save(output);
     }
 }

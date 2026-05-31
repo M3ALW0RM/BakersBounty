@@ -33,25 +33,29 @@ public class ModBlocks {
             () -> new StookBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
                     .strength(0.8f)
-                    .ignitedByLava()));
+                    .ignitedByLava()
+                    .noOcclusion()));
 
     public static final DeferredBlock<Block> EINKORN_STOOK = BLOCKS.register("einkorn_stook",
             () -> new StookBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_YELLOW)
                     .strength(0.8f)
-                    .ignitedByLava()));
+                    .ignitedByLava()
+                    .noOcclusion()));
 
     public static final DeferredBlock<Block> DRIED_WHEAT_STOOK = BLOCKS.register("dried_wheat_stook",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BROWN)
                     .strength(0.8f)
-                    .ignitedByLava()));
+                    .ignitedByLava()
+                    .noOcclusion()));
 
     public static final DeferredBlock<Block> DRIED_EINKORN_STOOK = BLOCKS.register("dried_einkorn_stook",
             () -> new Block(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BROWN)
                     .strength(0.8f)
-                    .ignitedByLava()));
+                    .ignitedByLava()
+                    .noOcclusion()));
 
     // This method must be called during mod initialization!
     public static void register(IEventBus eventBus) {

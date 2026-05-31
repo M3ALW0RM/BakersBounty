@@ -11,7 +11,14 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "bakersbounty:dried_einkorn_stook"
+          "functions": [
+            {
+              "add": false,
+              "count": 4.0,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "bakersbounty:dried_einkorn_sheaf"
         }
       ],
       "rolls": 1.0

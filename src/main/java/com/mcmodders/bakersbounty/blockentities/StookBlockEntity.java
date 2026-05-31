@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class StookBlockEntity extends BlockEntity {
 
-    private static final int DRYING_TICKS_REQUIRED = 12_000;
+    private static final int DRYING_TICKS_REQUIRED = 200;
     private int dryingProgress = 0;
 
     public StookBlockEntity(BlockPos pos, BlockState blockState) {

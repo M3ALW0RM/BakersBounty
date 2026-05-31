@@ -1,7 +1,7 @@
-// 1.21.1	2026-05-24T01:30:26.2813508	Loot Tables
-63754d33048553f36f29dcc784f61be0083ed893 data/bakersbounty/loot_table/blocks/dried_einkorn_stook.json
-2e36784f2fe9de8d3dbaa2869c321e68257c9b70 data/bakersbounty/loot_table/blocks/dried_wheat_stook.json
-ef28750d45ff18ed2615d44fce33e7b6b4efaa34 data/bakersbounty/loot_table/blocks/einkorn_crop.json
-39cc4881d139d0029e1c6868cb193dba7ad38d83 data/bakersbounty/loot_table/blocks/einkorn_stook.json
+// 1.21.1	2026-05-29T16:20:09.8372568	Loot Tables
+52884c73e3913c11c712866129e1ed86a889e432 data/bakersbounty/loot_table/blocks/dried_einkorn_stook.json
+221643e5ce984c4e6aab0a442a3b2937830d5b49 data/bakersbounty/loot_table/blocks/dried_wheat_stook.json
+9ba34bc87a88e37d138f158bf6cc431042a2aebc data/bakersbounty/loot_table/blocks/einkorn_crop.json
+1caf429934f5464a1c3dd6437ac8c9821a2b0112 data/bakersbounty/loot_table/blocks/einkorn_stook.json
 81c5cdf02ac58f693d49d4c6e49a44a618d021cd data/bakersbounty/loot_table/blocks/quern.json
-b4e67493dcae39f9d4fd1a358ad5447e4288dafc data/bakersbounty/loot_table/blocks/wheat_stook.json
+5ec1d092cc7add4160a6b56e57fa78859001a744 data/bakersbounty/loot_table/blocks/wheat_stook.json

@@ -1,7 +1,9 @@
 package com.mcmodders.bakersbounty.registry;
 
 import com.mcmodders.bakersbounty.BakersBounty;
+import com.mcmodders.bakersbounty.items.EinkornSeedItem;
 import com.mcmodders.bakersbounty.items.GroundStoneItem;
+import com.mcmodders.bakersbounty.items.SheafItem;
 import com.mcmodders.bakersbounty.items.SickleItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -18,7 +20,7 @@ ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BakersBounty.MODID);
 
     public static final DeferredItem<Item> EINKORN_SEEDS = ITEMS.register("einkorn_seeds",
-            () -> new ItemNameBlockItem(ModBlocks.EINKORN_CROP.get(), new Item.Properties()));
+            () -> new EinkornSeedItem(ModBlocks.EINKORN_CROP.get(), new Item.Properties()));
 
 
     public static final DeferredItem<Item> COARSE_WHEAT_FLOUR = ITEMS.registerSimpleItem("coarse_wheat_flour");
@@ -56,8 +58,12 @@ ModItems {
             () -> new GroundStoneItem(new Item.Properties().stacksTo(1))
     );
 
-    public static final DeferredItem<Item> WHEAT_SHEAF = ITEMS.registerSimpleItem("wheat_sheaf");
-    public static final DeferredItem<Item> EINKORN_SHEAF = ITEMS.registerSimpleItem("einkorn_sheaf");
+    public static final DeferredItem<Item> WHEAT_SHEAF = ITEMS.register("wheat_sheaf",
+            () -> new SheafItem(ModBlocks.WHEAT_STOOK, new Item.Properties()));
+    public static final DeferredItem<Item> EINKORN_SHEAF = ITEMS.register("einkorn_sheaf",
+            () -> new SheafItem(ModBlocks.EINKORN_STOOK, new Item.Properties()));
+    public static final DeferredItem<Item> DRIED_WHEAT_SHEAF = ITEMS.registerSimpleItem("dried_wheat_sheaf");
+    public static final DeferredItem<Item> DRIED_EINKORN_SHEAF = ITEMS.registerSimpleItem("dried_einkorn_sheaf");
 
     public static final DeferredItem<Item> SICKLE = ITEMS.register("sickle",
             () -> new SickleItem(new Item.Properties().durability(64)));
@@ -95,6 +101,8 @@ ModItems {
                 output.accept(ModItems.SICKLE.get());
                 output.accept(ModItems.WHEAT_SHEAF.get());
                 output.accept(ModItems.EINKORN_SHEAF.get());
+                output.accept(ModItems.DRIED_WHEAT_SHEAF.get());
+                output.accept(ModItems.DRIED_EINKORN_SHEAF.get());
                 output.accept(ModItems.WHEAT_STOOK.get());
                 output.accept(ModItems.EINKORN_STOOK.get());
                 output.accept(ModItems.DRIED_WHEAT_STOOK.get());

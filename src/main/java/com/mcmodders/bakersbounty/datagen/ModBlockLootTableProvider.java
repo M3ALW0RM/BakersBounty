@@ -6,7 +6,6 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.storage.loot.LootPool;
@@ -15,7 +14,6 @@ import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemRandomChanceCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
@@ -44,16 +42,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                                         .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.EINKORN_CROP.get())
                                                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7)))
                         ))
-                        // Pool 2: Wheat seeds when fully grown (12.5% chance = 1 in 8)
-                        .withPool(applyExplosionCondition(ModBlocks.EINKORN_CROP.get(),
-                                LootPool.lootPool()
-                                        .setRolls(ConstantValue.exactly(1.0F))
-                                        .add(LootItem.lootTableItem(Items.WHEAT_SEEDS))
-                                        .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.EINKORN_CROP.get())
-                                                .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(CropBlock.AGE, 7)))
-                                        .when(LootItemRandomChanceCondition.randomChance(0.125F)) // 12.5% = 1/8 chance
-                        ))
-                        // Pool 3: Einkorn seeds when not fully grown (1 seed for replanting)
+                        // Pool 2: Einkorn seeds when not fully grown (1 seed for replanting)
                         .withPool(applyExplosionCondition(ModBlocks.EINKORN_CROP.get(),
                                 LootPool.lootPool()
                                         .setRolls(ConstantValue.exactly(1.0F))
@@ -66,10 +55,34 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         );
 
         this.dropSelf(ModBlocks.QUERN.get());
-        this.dropSelf(ModBlocks.WHEAT_STOOK.get());
-        this.dropSelf(ModBlocks.EINKORN_STOOK.get());
-        this.dropSelf(ModBlocks.DRIED_WHEAT_STOOK.get());
-        this.dropSelf(ModBlocks.DRIED_EINKORN_STOOK.get());
+        this.add(ModBlocks.WHEAT_STOOK.get(), block ->
+                LootTable.lootTable().withPool(applyExplosionCondition(block,
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.WHEAT_SHEAF.get())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))))));
+
+        this.add(ModBlocks.EINKORN_STOOK.get(), block ->
+                LootTable.lootTable().withPool(applyExplosionCondition(block,
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.EINKORN_SHEAF.get())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))))));
+
+        this.add(ModBlocks.DRIED_WHEAT_STOOK.get(), block ->
+                LootTable.lootTable().withPool(applyExplosionCondition(block,
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.DRIED_WHEAT_SHEAF.get())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))))));
+
+        this.add(ModBlocks.DRIED_EINKORN_STOOK.get(), block ->
+                LootTable.lootTable().withPool(applyExplosionCondition(block,
+                        LootPool.lootPool()
+                                .setRolls(ConstantValue.exactly(1.0F))
+                                .add(LootItem.lootTableItem(ModItems.DRIED_EINKORN_SHEAF.get())
+                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly(4.0F)))))));
+
     }
 
     @Override

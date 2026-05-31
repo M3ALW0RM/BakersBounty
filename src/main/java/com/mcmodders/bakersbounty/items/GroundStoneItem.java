@@ -2,6 +2,7 @@ package com.mcmodders.bakersbounty.items;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.neoforged.neoforge.common.Tags;
 
 public class GroundStoneItem extends Item {
 
